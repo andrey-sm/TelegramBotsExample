@@ -1,5 +1,7 @@
 package org.telegram;
 
+import org.telegram.ak.AkLongBot;
+import org.telegram.ak.AkWebhookBot;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
@@ -48,6 +50,8 @@ public class Main {
                 telegramBotsApi.registerBot(new TransifexHandlers());
                 telegramBotsApi.registerBot(new FilesHandlers());
                 telegramBotsApi.registerBot(new CommandsHandler());
+                telegramBotsApi.registerBot(new AkLongBot());
+                telegramBotsApi.registerBot(new AkWebhookBot());
             } catch (TelegramApiException e) {
                 BotLogger.error(LOGTAG, e);
             }
